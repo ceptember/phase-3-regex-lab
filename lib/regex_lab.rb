@@ -1,19 +1,24 @@
-def starts_with_a_vowel?(word)
-
+def starts_with_a_vowel?(word) 
+ word.match(/^[aeiouAEIOU]/) ? true : false 
 end
 
-def words_starting_with_un_and_ending_with_ing(text)
-
+def words_starting_with_un_and_ending_with_ing(text) 
+    text.scan(/un\w*ing/)
 end
 
-def words_five_letters_long(text)
-
+def words_five_letters_long(text) 
+    text.scan(/\b\w{5}\b/)
 end
 
 def first_word_capitalized_and_ends_with_punctuation?(text)
-
+    text.match(/^[A-Z].*\W$/) ? true : false 
 end
 
 def valid_phone_number?(phone)
-
+    phone.match(/^1?\W?\W?\d{3}\W?\W?\d{3}\W?\d{4}/) ? true : false 
 end
+
+#puts starts_with_a_vowel?("word")
+#puts words_starting_with_un_and_ending_with_ing("unending mouse underlying")
+#puts words_five_letters_long("extreme briny crepe parking snaps grouping snafu round dog be fork spoon")
+puts valid_phone_number?("(5555) 555-5555")
